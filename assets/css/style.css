@@ -246,6 +246,10 @@ body {
 .source-link {
   color: #888;
   text-decoration: underline;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
 }
 
 .source-link:hover {
