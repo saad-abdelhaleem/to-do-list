@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todos</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <div class="todo-app">
+
+    <!-- App title -->
+    <header class="todo-header">
+      <h1>Todos</h1>
+    </header>
+
+    <!-- Search box: filters the visible task list by text -->
+    <div class="todo-card">
+      <input
+        type="text"
+        id="search-input"
+        class="search-input"
+        placeholder="Search tasks..."
+      />
+    </div>
+
+    <!-- Main panel: new task input + toolbar + task list + footer -->
+    <div class="todo-card">
+
+      <!-- New task input -->
+      <form id="new-todo-form" class="new-todo-form">
+        <input
+          type="text"
+          id="new-todo-input"
+          class="new-todo-input"
+          placeholder="What needs to be done?"
+          autocomplete="off"
+        />
+      </form>
+
+      <!-- Toolbar: select/unselect all tasks at once -->
+      <div class="toolbar">
+        <label class="toggle-all-label">
+          <input type="checkbox" id="toggle-all-checkbox" />
+          <span>Mark all as complete</span>
+        </label>
+      </div>
+
+      <!-- Task list is rendered here by JavaScript -->
+      <ul id="todo-list" class="todo-list"></ul>
+
+      <!-- Empty state, shown when there are no tasks to display -->
+      <p id="empty-state" class="empty-state" hidden>No tasks found.</p>
+
+      <!-- Footer: counters + clear completed action -->
+      <footer class="todo-footer">
+        <span id="items-left-count" class="items-left">0 items left</span>
+        <button id="clear-completed-btn" class="clear-completed-btn" type="button">
+          Clear 0 completed items
+        </button>
+      </footer>
+
+    </div>
+
+    <!-- Summary bar: totals for active / completed / deleted tasks -->
+    <div class="todo-card stats-card">
+      <span>Total: <strong id="total-count">0</strong></span>
+      <span>Completed: <strong id="completed-count">0</strong></span>
+      <span>Deleted: <strong id="deleted-count">0</strong></span>
+    </div>
+
+    <p class="hint">Double-click to edit a todo.</p>
+
+  </div>
+
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
